@@ -102,6 +102,9 @@
     <ClCompile Include="CmdSetColor.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -148,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="CmdSetColor.h">
       <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
