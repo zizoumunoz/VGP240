@@ -1,4 +1,4 @@
-SetResolution(22, 25, 25)
+SetResolution(22, 25, 25, false)
 
 // Border
 SetColor(0.0, 0.0, 0.0) // black
@@ -490,4 +490,5 @@ DrawPixel(18, 24)
 DrawPixel(19, 24)
 DrawPixel(20, 24)
 DrawPixel(21, 24)
+
 
