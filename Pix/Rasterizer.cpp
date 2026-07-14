@@ -24,7 +24,7 @@ void DrawLineVertical(const Vertex& low, const Vertex& high)
 	int endY = static_cast<int>(high._pos.y);
 	for (int y = startY; y <= endY; ++y)
 	{
-		float t = static_cast<float>(y) / dy;
+		float t = static_cast<float>(y - startY) / dy;
 		Vertex v = LerpVertex(low, high, t);
 		Rasterizer::Get()->DrawPoint(v);
 
@@ -40,6 +40,11 @@ Rasterizer* Rasterizer::Get()
 void Rasterizer::SetColor(X::Color color)
 {
 	mColor = color;
+}
+
+void Rasterizer::SetFillMode(FillMode fillMode)
+{
+	mFillMode = fillMode;
 }
 
 void Rasterizer::DrawPoint(int x, int y)
@@ -72,7 +77,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 	// else draw horizontal
 	else
 	{
-		if (a._pos.x < b._pos.x)
+		if (a._pos.y < b._pos.y)
 		{
 			DrawLineHorizontal(a, b);
 		}
@@ -85,4 +90,73 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 
 void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 {
+	switch (mFillMode)
+	{
+	case FillMode::Wireframe:
+	{
+		DrawLine(a, b);
+		DrawLine(b, c);
+		DrawLine(c, a);
+	}
+	break;
+	case FillMode::Solid:
+	{
+		std::vector<Vertex> sortedVertices = { a, b, c };
+		std::sort(sortedVertices.begin(), sortedVertices.end(),
+			[](const Vertex& lhs, const Vertex& rhs)
+			{
+				return lhs._pos.y < rhs._pos.y;
+			});
+		DrawFilledTriangle(sortedVertices[0], sortedVertices[1], sortedVertices[2]);
+	}
+	break;
+	default:
+		break;
+	}
+}
+
+void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
+{
+	// values passed in are already sorted where a is the lowest value(top of the screen)
+	// and c is the highest value (bottom of the screen, remeber positive y goes down)
+
+	float dy = c._pos.y - a._pos.y;
+	// if a and b are the same, triangle is a flat top
+	if (MathHelper::CheckEqual(a._pos.y, b._pos.y))
+	{
+		int startY = static_cast<int>(a._pos.y);
+		int endY = static_cast<int>(c._pos.y);
+		for (int y = 0; y <= endY; ++y)
+		{
+			float t = static_cast<float>(y - startY) / dy;
+			Vertex aSide = LerpVertex(a, c, t);
+			Vertex bSide = LerpVertex(b, c, t);
+			DrawLine(aSide, bSide);
+		}
+	}
+
+	// if b and c are the same, triangle is a flat bottom
+	else if (MathHelper::CheckEqual(b._pos.y, c._pos.y))
+	{
+		int startY = static_cast<int>(a._pos.y);
+		int endY = static_cast<int>(c._pos.y);
+		for (int y = 0; y <= endY; ++y)
+		{
+			float t = static_cast<float>(y - startY) / dy;
+			Vertex bSide = LerpVertex(a, b, t);
+			Vertex cSide = LerpVertex(a, c, t);
+		}
+	}
+
+	// no edges, need a split vertex
+	else
+	{
+		float t = (b._pos.y - a._pos.y) / dy;
+		Vertex splitVertex = LerpVertex(a, c, t);
+		// bottom flat fill
+		DrawFilledTriangle(a, b, splitVertex);
+		// top is flat fill
+		DrawFilledTriangle(b, splitVertex, c);
+	}
+
 }

@@ -113,6 +113,7 @@
     <ClCompile Include="CmdEndDraw.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
+    <ClCompile Include="CmdSetFillMode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -176,6 +177,9 @@
       <Filter>Commands</Filter>
     </ClInclude>
     <ClInclude Include="CmdEndDraw.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdSetFillMode.h">
       <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
