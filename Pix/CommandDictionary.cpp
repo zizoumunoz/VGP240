@@ -6,8 +6,8 @@
 
 // Added commands
 #include "CmdSetColor.h"
-#include "CmdEndDraw.h"
 #include "CmdBeginDraw.h"
+#include "CmdEndDraw.h"
 #include "CmdVertex.h"
 #include "CmdSetFillMode.h"
 
@@ -33,10 +33,10 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetColor>();
 
 	// Primitives commands
+	RegisterCommand<CmdSetFillMode>();
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdVertex>();
-	RegisterCommand<CmdSetFillMode>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
