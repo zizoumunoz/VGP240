@@ -105,15 +105,21 @@
     <ClCompile Include="MathHelper.cpp">
       <Filter>Math</Filter>
     </ClCompile>
-    <ClCompile Include="PrimitivesManager.cpp" />
-    <ClCompile Include="CmdBeginDraw.cpp" />
     <ClCompile Include="CmdVertex.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
     <ClCompile Include="CmdEndDraw.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
-    <ClCompile Include="CmdSetFillMode.cpp" />
+    <ClCompile Include="CmdBeginDraw.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdSetFillMode.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="PrimitivesManager.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
