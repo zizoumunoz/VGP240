@@ -39,17 +39,17 @@ Rasterizer* Rasterizer::Get()
 
 void Rasterizer::SetColor(X::Color color)
 {
-	mColor = color;
+	m_Color = color;
 }
 
 void Rasterizer::SetFillMode(FillMode fillMode)
 {
-	mFillMode = fillMode;
+	m_FillMode = fillMode;
 }
 
 void Rasterizer::DrawPoint(int x, int y)
 {
-	X::DrawPixel(x, y, mColor);
+	X::DrawPixel(x, y, m_Color);
 }
 
 void Rasterizer::DrawPoint(const Vertex& v)
@@ -90,7 +90,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 
 void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 {
-	switch (mFillMode)
+	switch (m_FillMode)
 	{
 	case FillMode::Wireframe:
 	{
