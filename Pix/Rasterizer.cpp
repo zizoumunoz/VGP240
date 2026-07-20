@@ -77,7 +77,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 	// else draw horizontal
 	else
 	{
-		if (a._pos.y < b._pos.y)
+		if (a._pos.x < b._pos.x)
 		{
 			DrawLineHorizontal(a, b);
 		}
