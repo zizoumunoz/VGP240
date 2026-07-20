@@ -126,7 +126,7 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 	{
 		int startY = static_cast<int>(a._pos.y);
 		int endY = static_cast<int>(c._pos.y);
-		for (int y = 0; y <= endY; ++y)
+		for (int y = startY; y <= endY; ++y)
 		{
 			float t = static_cast<float>(y - startY) / dy;
 			Vertex aSide = LerpVertex(a, c, t);
@@ -140,7 +140,7 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 	{
 		int startY = static_cast<int>(a._pos.y);
 		int endY = static_cast<int>(c._pos.y);
-		for (int y = 0; y <= endY; ++y)
+		for (int y = startY; y <= endY; ++y)
 		{
 			float t = static_cast<float>(y - startY) / dy;
 			Vertex bSide = LerpVertex(a, b, t);
