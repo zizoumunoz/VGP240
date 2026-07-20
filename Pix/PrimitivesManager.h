@@ -29,8 +29,8 @@ public:
 private:
 	PrimitivesManager();
 
-	std::vector<Vertex> _mVertexBuffer;
-	Topology _mTopology = Topology::Point;
-	bool _mDrawBegin = false;
+	std::vector<Vertex> m_VertexBuffer;
+	Topology m_Topology = Topology::Point;
+	bool m_DrawBegin = false;
 
 };

@@ -13,49 +13,49 @@ PrimitivesManager* PrimitivesManager::Get()
 
 bool PrimitivesManager::BeginDraw(Topology topology)
 {
-	_mVertexBuffer.clear();
-	_mTopology = topology;
-	_mDrawBegin = true;
+	m_VertexBuffer.clear();
+	m_Topology = topology;
+	m_DrawBegin = true;
 	return true;
 }
 
 void PrimitivesManager::AddVertex(const Vertex& v)
 {
-	if (_mDrawBegin)
+	if (m_DrawBegin)
 	{
-		_mVertexBuffer.push_back(v);
+		m_VertexBuffer.push_back(v);
 	}
 }
 
 void PrimitivesManager::EndDraw()
 {
-	if (!_mDrawBegin)
+	if (!m_DrawBegin)
 	{
 		return;
 	}
-	switch (_mTopology)
+	switch (m_Topology)
 	{
 	case Topology::Point:
 	{
-		for (uint32_t i = 0; i < _mVertexBuffer.size(); ++i)
+		for (uint32_t i = 0; i < m_VertexBuffer.size(); ++i)
 		{
-			Rasterizer::Get()->DrawPoint(_mVertexBuffer[i]);
+			Rasterizer::Get()->DrawPoint(m_VertexBuffer[i]);
 		}
 	}
 	break;
 	case Topology::Line:
 	{
-		for (uint32_t i = 1; i < _mVertexBuffer.size(); i += 2)
+		for (uint32_t i = 1; i < m_VertexBuffer.size(); i += 2)
 		{
-			Rasterizer::Get()->DrawLine(_mVertexBuffer[i - 1], _mVertexBuffer[i]);
+			Rasterizer::Get()->DrawLine(m_VertexBuffer[i - 1], m_VertexBuffer[i]);
 		}
 	}
 	break;
 	case Topology::Triangle:
 	{
-		for (uint32_t i = 2; i < _mVertexBuffer.size(); i += 3)
+		for (uint32_t i = 2; i < m_VertexBuffer.size(); i += 3)
 		{
-			Rasterizer::Get()->DrawLine(_mVertexBuffer[i - 2], _mVertexBuffer[i]);
+			Rasterizer::Get()->DrawTriangle(m_VertexBuffer[i - 2], m_VertexBuffer[i - 1], m_VertexBuffer[i]);
 		}
 	}
 	break;
