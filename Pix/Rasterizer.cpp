@@ -5,9 +5,9 @@
 // this allows us to always index in a positive direction (sipmle math)
 void DrawLineHorizontal(const Vertex& left, const Vertex& right)
 {
-	float dx = right._pos.x - left._pos.x;
-	int startX = static_cast<int>(left._pos.x);
-	int endX = static_cast<int>(right._pos.x);
+	float dx = right.m_pos.x - left.m_pos.x;
+	int startX = static_cast<int>(left.m_pos.x);
+	int endX = static_cast<int>(right.m_pos.x);
 	for (int x = startX; x <= endX; ++x)
 	{
 		float t = static_cast<float>(x - startX) / dx;
@@ -19,9 +19,9 @@ void DrawLineHorizontal(const Vertex& left, const Vertex& right)
 // A function for drawing a line where the slope is > 1 (vertical)
 void DrawLineVertical(const Vertex& low, const Vertex& high)
 {
-	float dy = high._pos.y - low._pos.y;
-	int startY = static_cast<int>(low._pos.y);
-	int endY = static_cast<int>(high._pos.y);
+	float dy = high.m_pos.y - low.m_pos.y;
+	int startY = static_cast<int>(low.m_pos.y);
+	int endY = static_cast<int>(high.m_pos.y);
 	for (int y = startY; y <= endY; ++y)
 	{
 		float t = static_cast<float>(y - startY) / dy;
@@ -54,18 +54,18 @@ void Rasterizer::DrawPoint(int x, int y)
 
 void Rasterizer::DrawPoint(const Vertex& v)
 {
-	X::DrawPixel(v._pos.x, v._pos.y, v._color);
+	X::DrawPixel(v.m_pos.x, v.m_pos.y, v.m_color);
 }
 
 void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 {
-	float dx = b._pos.x - a._pos.x;
-	float dy = b._pos.y - a._pos.y;
+	float dx = b.m_pos.x - a.m_pos.x;
+	float dy = b.m_pos.y - a.m_pos.y;
 
 	// check if vertical, else horizontal
 	if (MathHelper::CheckEqual(dx, 0.0f) || abs(dy / dx) > 1.0f)
 	{
-		if (a._pos.y < b._pos.y)
+		if (a.m_pos.y < b.m_pos.y)
 		{
 			DrawLineVertical(a, b);
 		}
@@ -77,7 +77,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 	// else draw horizontal
 	else
 	{
-		if (a._pos.x < b._pos.x)
+		if (a.m_pos.x < b.m_pos.x)
 		{
 			DrawLineHorizontal(a, b);
 		}
@@ -105,7 +105,7 @@ void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 		std::sort(sortedVertices.begin(), sortedVertices.end(),
 			[](const Vertex& lhs, const Vertex& rhs)
 			{
-				return lhs._pos.y < rhs._pos.y;
+				return lhs.m_pos.y < rhs.m_pos.y;
 			});
 		DrawFilledTriangle(sortedVertices[0], sortedVertices[1], sortedVertices[2]);
 	}
@@ -120,12 +120,12 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 	// values passed in are already sorted where a is the lowest value(top of the screen)
 	// and c is the highest value (bottom of the screen, remeber positive y goes down)
 
-	float dy = c._pos.y - a._pos.y;
+	float dy = c.m_pos.y - a.m_pos.y;
 	// if a and b are the same, triangle is a flat top
-	if (MathHelper::CheckEqual(a._pos.y, b._pos.y))
+	if (MathHelper::CheckEqual(a.m_pos.y, b.m_pos.y))
 	{
-		int startY = static_cast<int>(a._pos.y);
-		int endY = static_cast<int>(c._pos.y);
+		int startY = static_cast<int>(a.m_pos.y);
+		int endY = static_cast<int>(c.m_pos.y);
 		for (int y = startY; y <= endY; ++y)
 		{
 			float t = static_cast<float>(y - startY) / dy;
@@ -136,10 +136,10 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 	}
 
 	// if b and c are the same, triangle is a flat bottom
-	else if (MathHelper::CheckEqual(b._pos.y, c._pos.y))
+	else if (MathHelper::CheckEqual(b.m_pos.y, c.m_pos.y))
 	{
-		int startY = static_cast<int>(a._pos.y);
-		int endY = static_cast<int>(c._pos.y);
+		int startY = static_cast<int>(a.m_pos.y);
+		int endY = static_cast<int>(c.m_pos.y);
 		for (int y = startY; y <= endY; ++y)
 		{
 			float t = static_cast<float>(y - startY) / dy;
@@ -151,7 +151,7 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 	// no edges, need a split vertex
 	else
 	{
-		float t = (b._pos.y - a._pos.y) / dy;
+		float t = (b.m_pos.y - a.m_pos.y) / dy;
 		Vertex splitVertex = LerpVertex(a, c, t);
 		// bottom flat fill
 		DrawFilledTriangle(a, b, splitVertex);

@@ -55,8 +55,8 @@ bool CmdVertex::Execute(const std::vector<std::string>& params)
 	}
 
 	Vertex v;
-	v._pos = { x, y ,z };
-	v._color = { r, g, b, 1.0f };
+	v.m_pos = { x, y ,z };
+	v.m_color = { r, g, b, 1.0f };
 	PrimitivesManager::Get()->AddVertex(v);
 	return true;
 }
