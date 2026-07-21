@@ -62,7 +62,19 @@ void PrimitivesManager::EndDraw()
 	{
 		for (uint32_t i = 2; i < m_VertexBuffer.size(); i += 3)
 		{
-			Rasterizer::Get()->DrawTriangle(m_VertexBuffer[i - 2], m_VertexBuffer[i - 1], m_VertexBuffer[i]);
+			std::vector<Vertex> triangle = {
+				m_VertexBuffer[i - 2],
+				m_VertexBuffer[i - 1],
+				m_VertexBuffer[i]
+			};
+			if (!Clipper::Get()->ClipTriangle(triangle))
+			{
+				for (size_t t = 2; t < triangle.size(); ++t)
+				{
+					Rasterizer::Get()->DrawTriangle(triangle[0], triangle[t - 1], triangle[t]);
+
+				}
+			}
 		}
 	}
 	break;

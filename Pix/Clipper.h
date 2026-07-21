@@ -10,6 +10,7 @@ public:
 
 	bool ClipPoint(const Vertex& v);
 	bool ClipLine(Vertex& a, Vertex& b);
+	bool ClipTriangle(std::vector<Vertex>& v);
 
 	bool IsClipping() const;
 	void SetClipping(bool enable);
@@ -21,4 +22,3 @@ private:
 
 
 };
-

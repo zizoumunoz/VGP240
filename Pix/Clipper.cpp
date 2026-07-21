@@ -1,7 +1,6 @@
 #include "Clipper.h"
 #include "Viewport.h"	// we need something to clip against
 
-
 const short BIT_INSIDE = 0;		// 0000
 const short BIT_LEFT = 1 << 0;	// 0001
 const short BIT_RIGHT = 1 << 1;	// 0010
@@ -35,6 +34,63 @@ short GetOutputCode(float x, float y)
 		code |= BIT_BOTTOM;
 	}
 	return code;
+}
+
+// Used for Triangle Clipping
+enum ClipEdge
+{
+	CE_LEFT,
+	CE_TOP,
+	CE_RIGHT,
+	CE_BOTTOM,
+	CE_COUNT	// We can use this to iterate the enum
+};
+
+bool IsInFront(ClipEdge edge, const Vector3& pos)
+{
+	Viewport* vp = Viewport::Get();
+	switch (edge)
+	{
+	case CE_LEFT:
+		return pos.x > vp->GetMinX();
+		break;
+	case CE_TOP:
+		return pos.y > vp->GetMinY();
+		break;
+	case CE_RIGHT:
+		return pos.x < vp->GetMaxX();
+		break;
+	case CE_BOTTOM:
+		return pos.y < vp->GetMaxY();
+		break;
+	default:
+		break;
+	}
+}
+
+Vertex ComputeIntersection(ClipEdge edge, const Vertex& a, const Vertex& b)
+{
+	Viewport* vp = Viewport::Get();
+	float t = 0.0f;
+	switch (edge)
+	{
+	case CE_LEFT:
+		t = (vp->GetMinX() - a.m_pos.x) / (b.m_pos.x - a.m_pos.x);
+		break;
+	case CE_TOP:
+		t = (vp->GetMinY() - a.m_pos.y) / (b.m_pos.y - a.m_pos.y);
+		break;
+	case CE_RIGHT:
+		t = (vp->GetMaxX() - a.m_pos.x) / (b.m_pos.x - a.m_pos.x);
+		break;
+	case CE_BOTTOM:
+		t = (vp->GetMaxY() - a.m_pos.y) / (b.m_pos.y - a.m_pos.y);
+		break;
+	default:
+		break;
+	}
+
+	return LerpVertex(a, b, t);
 }
 
 Clipper* Clipper::Get()
@@ -131,6 +187,66 @@ bool Clipper::ClipLine(Vertex& a, Vertex& b)
 	}
 
 	return (codeA | codeB);
+}
+
+bool Clipper::ClipTriangle(std::vector<Vertex>& v)
+{
+	if (!m_IsClipping)
+	{
+		return false;
+	}
+
+	// store new vertices while we step through the edges
+	std::vector<Vertex> newVertices;
+	for (int i = 0; i < CE_COUNT; i++)
+	{
+		newVertices.clear();
+		ClipEdge edge = (ClipEdge)i;
+		for (size_t n = 0; n < v.size(); ++n)
+		{
+			// get a loop to initial index
+			// nPO means nPlusOne
+			size_t nPO = (n + 1) % v.size();
+
+			// current vertex
+			const Vertex& vN = v[n];
+
+			// next vertex (n plus one)
+			const Vertex& vNPO = v[nPO];
+
+			// which points are inside and which are outside
+			bool nIsInFront = IsInFront(edge, vN.m_pos);
+			bool nPOIsInFront = IsInFront(edge, vNPO.m_pos);
+
+			// case 1 both are in front
+			if (nIsInFront && nPOIsInFront)
+			{
+				// save nPO as both are in the viewport
+				newVertices.push_back(vNPO);
+			}
+			// case 2 both are behind
+			else if (!nIsInFront && !nPOIsInFront)
+			{
+				// don't save anything
+			}
+			// case 3 n is in front, nPO is behind
+			else if (nIsInFront && !nPOIsInFront)
+			{
+				// only save the intersection
+				newVertices.push_back(ComputeIntersection(edge, vN, vNPO));
+			}
+			// case 4 n is behind, nPO is in front
+			else if (!nIsInFront && nPOIsInFront)
+			{
+				// save the intersection AND save nPO
+				newVertices.push_back(ComputeIntersection(edge, vN, vNPO));
+				newVertices.push_back(vNPO);
+			}
+		}
+		v = newVertices;
+	}
+
+	return newVertices.empty();
 }
 
 bool Clipper::IsClipping() const
