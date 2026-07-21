@@ -73,7 +73,6 @@ bool Clipper::ClipLine(Vertex& a, Vertex& b)
 		return false;
 	}
 
-
 	Viewport* vp = Viewport::Get();
 
 	float minX = vp->GetMinX();
@@ -112,6 +111,10 @@ bool Clipper::ClipLine(Vertex& a, Vertex& b)
 		else if (outCode & BIT_LEFT)
 		{
 			t = (minX - a.m_pos.x) / (b.m_pos.x - a.m_pos.x);
+		}
+		else if (outCode & BIT_RIGHT)
+		{
+			t = (maxX - a.m_pos.x) / (b.m_pos.x - a.m_pos.x);
 		}
 
 		if (outCode == codeA)
