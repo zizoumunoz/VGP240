@@ -1,5 +1,6 @@
 #include "PrimitivesManager.h"
 #include "Rasterizer.h"
+#include "Clipper.h"
 
 PrimitivesManager::PrimitivesManager()
 {
@@ -39,7 +40,10 @@ void PrimitivesManager::EndDraw()
 	{
 		for (uint32_t i = 0; i < m_VertexBuffer.size(); ++i)
 		{
-			Rasterizer::Get()->DrawPoint(m_VertexBuffer[i]);
+			if (!Clipper::Get()->ClipPoint(m_VertexBuffer[i]))
+			{
+				Rasterizer::Get()->DrawPoint(m_VertexBuffer[i]);
+			}
 		}
 	}
 	break;
@@ -47,7 +51,10 @@ void PrimitivesManager::EndDraw()
 	{
 		for (uint32_t i = 1; i < m_VertexBuffer.size(); i += 2)
 		{
-			Rasterizer::Get()->DrawLine(m_VertexBuffer[i - 1], m_VertexBuffer[i]);
+			if (!Clipper::Get()->ClipLine(m_VertexBuffer[i - 1], m_VertexBuffer[i]))
+			{
+				Rasterizer::Get()->DrawLine(m_VertexBuffer[i - 1], m_VertexBuffer[i]);
+			}
 		}
 	}
 	break;

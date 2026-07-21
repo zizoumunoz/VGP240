@@ -1,6 +1,8 @@
+C:\Users\zmuno\Documents\Local\VGP240\Pix\Clipper.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\Clipper.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdBeginDraw.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdBeginDraw.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdDrawPixel.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdDrawPixel.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdEndDraw.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdEndDraw.obj
+C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetClipping.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetColor.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetFillMode.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetFillMode.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetResolution.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetResolution.obj

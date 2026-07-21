@@ -36,6 +36,8 @@ bool Clipper::ClipLine(Vertex& a, Vertex& b)
 	{
 		return false;
 	}
+
+
 }
 
 bool Clipper::IsClipping() const

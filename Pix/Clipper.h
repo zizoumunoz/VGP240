@@ -15,7 +15,7 @@ public:
 	void SetClipping(bool enable);
 
 private:
-	Clipper();
+	Clipper() = default;
 
 	bool m_IsClipping = false;
 
