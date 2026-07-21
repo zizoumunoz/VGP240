@@ -120,6 +120,7 @@
     <ClCompile Include="PrimitivesManager.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="CmdSetViewport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -186,6 +187,9 @@
       <Filter>Commands</Filter>
     </ClInclude>
     <ClInclude Include="CmdSetFillMode.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdSetViewport.h">
       <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
