@@ -4,6 +4,7 @@ C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdEndDraw.cpp;C:\Users\zmuno\Document
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetColor.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetFillMode.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetFillMode.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetResolution.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetResolution.obj
+C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetViewport.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetViewport.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdVarFloat.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdVarFloat.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdVertex.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdVertex.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CommandDictionary.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CommandDictionary.obj
