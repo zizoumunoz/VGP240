@@ -28,6 +28,6 @@ public:
 private:
 	void DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vertex& c);
 	X::Color m_Color = X::Colors::White;
-	FillMode m_FillMode = FillMode::Wireframe;
+	FillMode m_FillMode = FillMode::Solid;
 
 };

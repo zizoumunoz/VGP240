@@ -1,0 +1,24 @@
+#pragma once
+
+#include "Vertex.h"
+class Clipper
+{
+public:
+	static Clipper* Get(); // singleton
+
+	void OnNewFrame();
+
+	bool ClipPoint(const Vertex& v);
+	bool ClipLine(Vertex& a, Vertex& b);
+
+	bool IsClipping() const;
+	void SetClipping(bool enable);
+
+private:
+	Clipper();
+
+	bool m_IsClipping = false;
+
+
+};
+

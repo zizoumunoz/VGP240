@@ -121,6 +121,9 @@
       <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="CmdSetViewport.cpp" />
+    <ClCompile Include="Clipper.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -191,6 +194,9 @@
     </ClInclude>
     <ClInclude Include="CmdSetViewport.h">
       <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Clipper.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
