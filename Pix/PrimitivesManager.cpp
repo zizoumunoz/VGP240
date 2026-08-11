@@ -1,6 +1,11 @@
 #include "PrimitivesManager.h"
 #include "Rasterizer.h"
 #include "Clipper.h"
+#include "MatrixStack.h"
+#include "Camera.h"
+
+extern float gResolutionX;
+extern float gResolutionY;
 
 namespace
 {
@@ -26,7 +31,7 @@ namespace
 		return norm;
 	}
 
-	bool CullTriangle(CullMode mode, const std::vector<Vertex>& triangle);
+	bool CullTriangle(CullMode mode, const std::vector<Vertex>& triangle)
 	{
 		if (mode == CullMode::None)
 		{
@@ -47,8 +52,7 @@ namespace
 
 
 PrimitivesManager::PrimitivesManager()
-{
-}
+{}
 
 PrimitivesManager* PrimitivesManager::Get()
 {
@@ -56,65 +60,78 @@ PrimitivesManager* PrimitivesManager::Get()
 	return &sInstance;
 }
 
-bool PrimitivesManager::BeginDraw(Topology topology)
+bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
-	m_VertexBuffer.clear();
-	m_Topology = topology;
-	m_DrawBegin = true;
+	m_vertexBuffer.clear();
+	m_topology = topology;
+	m_applyTransform = applyTransform;
+	m_drawBegin = true;
 	return true;
 }
 
 void PrimitivesManager::AddVertex(const Vertex& v)
 {
-	if (m_DrawBegin)
+	if (m_drawBegin)
 	{
-		m_VertexBuffer.push_back(v);
+		m_vertexBuffer.push_back(v);
 	}
 }
 
 void PrimitivesManager::EndDraw()
 {
-	if (!m_DrawBegin)
+	if (!m_drawBegin)
 	{
 		return;
 	}
 
-	// 
+	// apply transformation pipeline
+	// matLocal -> matWrold -> matView -> matProj -> matScreen
+	Matrix4 matWorld = MatrixStack::Get()->GetTransform();
+	// view matrix from the camera
+	Matrix4 matView = Camera::Get()->GetViewMatrix();
+	// projection matrix from the camera
+	Matrix4 matProj = Camera::Get()->GetProjectionMatrix();
+	// Screen space matrix from the screen
+	Matrix4 matScreen = GetScreenTransform();
+	// full transformation pipeline (commented out for notes)
+	// Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+	// transformation pipeline only to NDC space
+	Matrix4 matNDCSpace = matWorld * matView * matProj;
 
 
 
-	switch (m_Topology)
+	switch (m_topology)
 	{
 	case Topology::Point:
 	{
-		for (uint32_t i = 0; i < m_VertexBuffer.size(); ++i)
+		for (uint32_t i = 0; i < m_vertexBuffer.size(); ++i)
 		{
-			if (!Clipper::Get()->ClipPoint(m_VertexBuffer[i]))
+			if (!Clipper::Get()->ClipPoint(m_vertexBuffer[i]))
 			{
-				Rasterizer::Get()->DrawPoint(m_VertexBuffer[i]);
+				Rasterizer::Get()->DrawPoint(m_vertexBuffer[i]);
 			}
 		}
 	}
 	break;
 	case Topology::Line:
 	{
-		for (uint32_t i = 1; i < m_VertexBuffer.size(); i += 2)
+		for (uint32_t i = 1; i < m_vertexBuffer.size(); i += 2)
 		{
-			if (!Clipper::Get()->ClipLine(m_VertexBuffer[i - 1], m_VertexBuffer[i]))
+			if (!Clipper::Get()->ClipLine(m_vertexBuffer[i - 1], m_vertexBuffer[i]))
 			{
-				Rasterizer::Get()->DrawLine(m_VertexBuffer[i - 1], m_VertexBuffer[i]);
+				Rasterizer::Get()->DrawLine(m_vertexBuffer[i - 1], m_vertexBuffer[i]);
 			}
 		}
 	}
 	break;
 	case Topology::Triangle:
 	{
-		for (uint32_t i = 2; i < m_VertexBuffer.size(); i += 3)
+		for (uint32_t i = 2; i < m_vertexBuffer.size(); i += 3)
 		{
 			std::vector<Vertex> triangle = {
-				m_VertexBuffer[i - 2],
-				m_VertexBuffer[i - 1],
-				m_VertexBuffer[i]
+				m_vertexBuffer[i - 2],
+				m_vertexBuffer[i - 1],
+				m_vertexBuffer[i]
 			};
 			if (m_applyTransform)
 			{

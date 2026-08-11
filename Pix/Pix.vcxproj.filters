@@ -129,8 +129,6 @@
     <ClCompile Include="CmdSetClipping.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
-    <ClCompile Include="MatrixStack.cpp" />
-    <ClCompile Include="DepthBuffer.cpp" />
     <ClCompile Include="Camera.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
@@ -146,8 +144,18 @@
     <ClCompile Include="CmdVarBool.cpp">
       <Filter>Commands</Filter>
     </ClCompile>
-    <ClCompile Include="CmdCamera.cpp" />
-    <ClCompile Include="CmdEnableDepth.cpp" />
+    <ClCompile Include="CmdCamera.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CmdEnableDepth.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixStack.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthBuffer.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">

@@ -56,10 +56,9 @@ void Rasterizer::DrawPoint(int x, int y)
 void Rasterizer::DrawPoint(const Vertex& v)
 {
 	// if screen pos (x, y) has a closer z value, render, otherwise skip
-	if (DepthBuffer::Get()->CheckDepthBuffer(v.m_pos.x, v.m_pos.y, v.m_pos.z)
+	if (DepthBuffer::Get()->CheckDepthBuffer(v.m_pos.x, v.m_pos.y, v.m_pos.z))
 	{
 		X::DrawPixel(v.m_pos.x, v.m_pos.y, v.m_color);
-
 	}
 }
 
@@ -69,29 +68,29 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 	float dy = b.m_pos.y - a.m_pos.y;
 
 	// check if vertical, else horizontal
-		if (MathHelper::CheckEqual(dx, 0.0f) || abs(dy / dx) > 1.0f)
+	if (MathHelper::CheckEqual(dx, 0.0f) || abs(dy / dx) > 1.0f)
+	{
+		if (a.m_pos.y < b.m_pos.y)
 		{
-			if (a.m_pos.y < b.m_pos.y)
-			{
-				DrawLineVertical(a, b);
-			}
-			else
-			{
-				DrawLineVertical(b, a);
-			}
+			DrawLineVertical(a, b);
 		}
-	// else draw horizontal
 		else
 		{
-			if (a.m_pos.x < b.m_pos.x)
-			{
-				DrawLineHorizontal(a, b);
-			}
-			else
-			{
-				DrawLineHorizontal(b, a);
-			}
+			DrawLineVertical(b, a);
 		}
+	}
+	// else draw horizontal
+	else
+	{
+		if (a.m_pos.x < b.m_pos.x)
+		{
+			DrawLineHorizontal(a, b);
+		}
+		else
+		{
+			DrawLineHorizontal(b, a);
+		}
+	}
 }
 
 void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)

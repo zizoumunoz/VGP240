@@ -79,7 +79,7 @@ bool CmdPushRotationY::Execute(const std::vector<std::string>& params)
 
 const char* CmdPushRotationZ::GetName()
 {
-	return "PushRotationY";
+	return "PushRotationZ";
 }
 
 const char* CmdPushRotationZ::GetDescription()
