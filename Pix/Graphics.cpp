@@ -3,6 +3,9 @@
 #include "Viewport.h"
 #include "Clipper.h"
 #include "PrimitivesManager.h"
+#include "MatrixStack.h"
+#include "Camera.h"
+#include "DepthBuffer.h"
 
 void Graphics::NewFrame()
 {

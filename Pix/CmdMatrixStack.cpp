@@ -67,7 +67,14 @@ const char* CmdPushRotationY::GetDescription()
 
 bool CmdPushRotationY::Execute(const std::vector<std::string>& params)
 {
-	return false;
+	if (params.size() < 1)
+	{
+		return false;
+	}
+
+	float degrees = VariableCache::Get()->GetFloat(params[0]);
+	MatrixStack::Get()->PushRotationY(degrees * MathHelper::DegToRad);
+	return true;
 }
 
 const char* CmdPushRotationZ::GetName()
@@ -84,7 +91,14 @@ const char* CmdPushRotationZ::GetDescription()
 
 bool CmdPushRotationZ::Execute(const std::vector<std::string>& params)
 {
-	return false;
+	if (params.size() < 1)
+	{
+		return false;
+	}
+
+	float degrees = VariableCache::Get()->GetFloat(params[0]);
+	MatrixStack::Get()->PushRotationZ(degrees * MathHelper::DegToRad);
+	return true;
 }
 
 const char* CmdPushScaling::GetName()
@@ -101,7 +115,17 @@ const char* CmdPushScaling::GetDescription()
 
 bool CmdPushScaling::Execute(const std::vector<std::string>& params)
 {
-	return false;
+	if (params.size() < 3)
+	{
+		return false;
+	}
+
+	VariableCache* vc = VariableCache::Get();
+	const float x = vc->GetFloat(params[0]);
+	const float y = vc->GetFloat(params[1]);
+	const float z = vc->GetFloat(params[2]);
+	MatrixStack::Get()->PushScaling({ x, y, z });
+	return true;
 }
 
 const char* CmdPopMatrix::GetName()
@@ -118,5 +142,6 @@ const char* CmdPopMatrix::GetDescription()
 
 bool CmdPopMatrix::Execute(const std::vector<std::string>& params)
 {
-	return false;
+	MatrixStack::Get()->PopMatrix();
+	return true;
 }
