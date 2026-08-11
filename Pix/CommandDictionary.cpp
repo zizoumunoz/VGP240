@@ -12,6 +12,7 @@
 #include "CmdSetFillMode.h"
 #include "CmdSetViewport.h"
 #include "CmdSetClipping.h"
+#include "CmdSetCullMode.h"
 
 
 CommandDictionary* CommandDictionary::Get()
@@ -41,6 +42,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdVertex>();
+	RegisterCommand<CmdSetCullMode>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

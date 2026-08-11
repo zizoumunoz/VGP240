@@ -20,14 +20,16 @@ struct Matrix4
 		_21(_21), _22(_22), _23(_23), _24(_24),
 		_31(_31), _32(_32), _33(_33), _34(_34),
 		_41(_41), _42(_42), _43(_43), _44(_44)
-	{}
+	{
+	}
 
 	Matrix4()
 		: Matrix4(1.0f, 0.0f, 0.0f, 0.0f,
 			0.0f, 1.0f, 0.0f, 0.0f,
 			0.0f, 0.0f, 1.0f, 0.0f,
 			0.0f, 0.0f, 0.0f, 1.0f)
-	{}
+	{
+	}
 
 	Matrix4 operator+(const Matrix4& m)
 	{
@@ -163,5 +165,15 @@ struct Matrix4
 			0.0f, 0.0f, 1.0f, 0.0f,
 			 x,  y,  z, 1.0f,
 		};
+	}
+
+	static Matrix4 Translation(const Vector3& v)
+	{
+		return {
+			1.0f, 0.0f, 0.0f, 0.0f,
+			0.0f, 1.0f, 0.0f, 0.0f,
+			0.0f, 0.0f, 1.0f, 0.0f,
+			v.x,   v.y,  v.z, 1.0f,
+		}
 	}
 };

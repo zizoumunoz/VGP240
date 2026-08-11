@@ -26,6 +26,10 @@ public:
 	// by topology, to the rasterizer
 	void EndDraw();
 
+	void OnNewFrame();
+
+	void SetCullMode(CullMode mode);
+
 private:
 	PrimitivesManager();
 
