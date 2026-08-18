@@ -31,7 +31,7 @@ struct Matrix4
 	{
 	}
 
-	Matrix4 operator+(const Matrix4& m)
+	Matrix4 operator+(const Matrix4& m) const
 	{
 		return
 		{
@@ -42,7 +42,7 @@ struct Matrix4
 		};
 	}
 
-	Matrix4 operator*(float s)
+	Matrix4 operator*(float s) const
 	{
 		return
 		{
@@ -53,7 +53,7 @@ struct Matrix4
 		};
 	}
 
-	Matrix4 operator*(const Matrix4& m)
+	Matrix4 operator*(const Matrix4& m) const
 	{
 		return
 		{
