@@ -1,7 +1,6 @@
 #pragma once
 
 #include <XEngine.h>
-#include "Vector3.h"
 #include "Light.h"
 
 class LightManager
@@ -16,11 +15,13 @@ public:
 	void SetLightSpecular(const X::Color& color);
 
 	// directional light
+	void AddDirectionalLight(const Vector3& direction);
 	// point light
+	void AddPointLight(const Vector3& position, float kConstant, float kLinear, float kQuadratic);
+
 	// spot light
 
 	X::Color ComputeLightColor(const Vector3& position, const Vector3& normal);
-	void AddDirectionalLight(const Vector3& direction);
 
 private:
 	std::vector<std::unique_ptr<Light>> m_lights;

@@ -22,6 +22,9 @@
 // Light commands
 #include "CmdLights.h"
 
+// Material commands
+#include "CmdMaterial.h"
+
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -73,6 +76,17 @@ CommandDictionary::CommandDictionary()
 
 	// Light commands
 	RegisterCommand<CmdSetLightAmbient>();
+	RegisterCommand<CmdSetLightDiffuse>();
+	RegisterCommand<CmdSetLightSpecular>();
+	RegisterCommand<CmdAddDirectionalLight>();
+	RegisterCommand<CmdAddPointLight>();
+
+	// Material Commands
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand<CmdSetMaterialShininess>();
+	RegisterCommand<CmdSetMaterialSpecular>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

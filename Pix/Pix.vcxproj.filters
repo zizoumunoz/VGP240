@@ -168,7 +168,9 @@
     <ClCompile Include="LightTypes.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="CmdLights.cpp" />
+    <ClCompile Include="CmdLights.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">

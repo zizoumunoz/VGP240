@@ -46,3 +46,36 @@ bool CmdSetLightDiffuse::Execute(const std::vector<std::string>& params)
     LightManager::Get()->SetLightDiffuse({ r, g, b, 1.f });
     return true;
 }
+
+bool CmdAddDirectionalLight::Execute(const std::vector<std::string>& params)
+{
+    if (params.size() < 3) {
+        return false;
+    }
+
+    VariableCache* vc = VariableCache::Get();
+    float x = vc->GetFloat(params[0]);
+    float y = vc->GetFloat(params[1]);
+    float z = vc->GetFloat(params[2]);
+    LightManager::Get()->AddDirectionalLight({ x, y, z });
+    return true;
+}
+
+bool CmdAddPointLight::Execute(const std::vector<std::string>& params)
+{
+	if (params.size() < 3) {
+		return false;
+	}
+
+	VariableCache* vc = VariableCache::Get();
+	float x = vc->GetFloat(params[0]);
+	float y = vc->GetFloat(params[1]);
+	float z = vc->GetFloat(params[2]);
+
+	float kConstant = (params.size() > 3) ? vc->GetFloat(params[3]) : 1.0f;
+	float kLinear = (params.size() > 4) ? vc->GetFloat(params[4]) : 1.0f;
+	float kQuadratic = (params.size() > 5) ? vc->GetFloat(params[5]) : 1.0f;
+
+	LightManager::Get()->AddPointLight({ x,y,z }, kConstant, kLinear, kQuadratic);
+	return true;
+}

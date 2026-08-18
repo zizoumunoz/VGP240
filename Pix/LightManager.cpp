@@ -39,10 +39,22 @@ void LightManager::AddDirectionalLight(const Vector3& direction)
 	light->SetAmbient(m_ambient);
 	light->SetDiffuse(m_diffuse);
 	light->SetSpecular(m_specular);
-
+	light->SetDirection(direction);
+	m_lights.push_back(std::move(light));
 }
 
 // point light
+void LightManager::AddPointLight(const Vector3& position, float kConstant, float kLinear, float kQuadratic)
+{
+	auto light = std::make_unique<PointLight>();
+	light->SetAmbient(m_ambient);
+	light->SetDiffuse(m_diffuse);
+	light->SetSpecular(m_specular);
+	light->SetAttenuation(kConstant, kLinear, kQuadratic);
+	light->SetPosition(position);
+	m_lights.push_back(std::move(light));
+}
+
 // spot light
 
 X::Color LightManager::ComputeLightColor(const Vector3& position, const Vector3& normal)
@@ -52,5 +64,11 @@ X::Color LightManager::ComputeLightColor(const Vector3& position, const Vector3&
 		return X::Colors::White;
 	}
 	// C = Ce + E(Ca + Cd + Cs) of all the lights
-	X::Color color = MaterialManager::
+	X::Color color = MaterialManager::Get()->GetMaterialEmissive();
+	for (auto& light : m_lights)
+	{
+		color += light->ComputeLightColor(position, normal);
+	}
+
+	return color;
 }
