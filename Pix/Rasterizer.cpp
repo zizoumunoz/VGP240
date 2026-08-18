@@ -68,7 +68,7 @@ void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
 	float dy = b.m_pos.y - a.m_pos.y;
 
 	// check if vertical, else horizontal
-	if (MathHelper::CheckEqual(dx, 0.0f) || abs(dy / dx) > 1.0f)
+	if (MathHelper::CheckEqual(dx, 0.0f) || abs(dy) > abs(dx))
 	{
 		if (a.m_pos.y < b.m_pos.y)
 		{

@@ -8,7 +8,7 @@ DepthBuffer* DepthBuffer::Get()
 
 void DepthBuffer::OnNewFrame()
 {
-	m_enabled = false;
+	m_enabled = true;
 	for (int i = 0; i < m_width * m_height; ++i)
 	{
 		m_depthBuffer[i] = 1.0f;
@@ -40,7 +40,7 @@ bool DepthBuffer::CheckDepthBuffer(int x, int y, float depth)
 
 	if (x >= 0 && x < m_width && y >= 0.0f && y < m_height && depth > 0.0f)
 	{
-		const int index = x + (y * m_width);
+		const int index = x + (y * m_height);
 		if (depth <= m_depthBuffer[index])
 		{
 			m_depthBuffer[index] = depth;

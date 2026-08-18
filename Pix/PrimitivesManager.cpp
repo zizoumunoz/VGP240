@@ -1,4 +1,4 @@
-#include "PrimitivesManager.h"
+	#include "PrimitivesManager.h"
 #include "Rasterizer.h"
 #include "Clipper.h"
 #include "MatrixStack.h"
@@ -42,11 +42,10 @@ namespace
 		{
 			return faceNormal.z > 0.0f;
 		}
-		if (mode == CullMode::Front)
+		else
 		{
 			return faceNormal.z < 0.0f;
 		}
-		return false;
 	}
 }
 

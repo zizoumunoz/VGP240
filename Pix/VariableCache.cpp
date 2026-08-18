@@ -42,7 +42,7 @@ struct BoolVar : public Variable
 	{
 		ImGui::Checkbox(name.c_str(), &value);
 	}
-	bool value = false;
+	bool value = true;
 };
 
 VariableCache* VariableCache::Get()

@@ -101,7 +101,7 @@ Clipper* Clipper::Get()
 
 void Clipper::OnNewFrame()
 {
-	m_IsClipping = false;
+	*this = {};	
 }
 
 bool Clipper::ClipPoint(const Vertex& v)

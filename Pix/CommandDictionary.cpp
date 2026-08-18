@@ -38,7 +38,8 @@ CommandDictionary::CommandDictionary()
 	// Variable commands
 	RegisterCommand<CmdVarFloat>();
 	RegisterCommand<CmdVarInt>();
-	RegisterCommand<CmdVarFloat>();
+	RegisterCommand<CmdVarBool>();
+
 
 	// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();

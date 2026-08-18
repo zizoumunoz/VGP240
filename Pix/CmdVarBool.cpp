@@ -12,7 +12,7 @@ bool CmdVarBool::Execute(const std::vector<std::string>& params)
 	if (!vc->IsVarName(params[0]) || params[1] != "=")
 		return false;
 
-	const bool value = std::stof(params[2]);
+	const bool value = params[2] == "true";
 
 	// Register variable
 	vc->AddBool(params[0], value);

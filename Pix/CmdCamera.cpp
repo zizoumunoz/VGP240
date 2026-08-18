@@ -37,8 +37,9 @@ bool CmdSetCameraNear::Execute(const std::vector<std::string>& params)
 	{
 		return false;
 	}
-	const float nearPlane = VariableCache::Get()->GetFloat(params[0]);
-	Camera::Get()->SetFarPlane(nearPlane);
+	VariableCache* vc = VariableCache::Get();
+	const float n = vc->GetFloat(params[0]);
+	Camera::Get()->SetFarPlane(n);
 	return true;
 }
 
@@ -48,8 +49,10 @@ bool CmdSetCameraFar::Execute(const std::vector<std::string>& params)
 	{
 		return false;
 	}
-	const float farPlane = VariableCache::Get()->GetFloat(params[0]);
-	Camera::Get()->SetFarPlane(farPlane);
+
+	VariableCache* vc = VariableCache::Get();
+	const float f = vc->GetFloat(params[0]);
+	Camera::Get()->SetFarPlane(f);
 	return true;
 }
 
@@ -59,7 +62,9 @@ bool CmdSetCameraFov::Execute(const std::vector<std::string>& params)
 	{
 		return false;
 	}
-	const float fovDegrees = VariableCache::Get()->GetFloat(params[0]);
-	Camera::Get()->SetFov(fovDegrees * MathHelper::DegToRad);
+
+	VariableCache* vc = VariableCache::Get();
+	const float f = vc->GetFloat(params[0]);
+	Camera::Get()->SetFov(f * MathHelper::DegToRad);
 	return true;
 }
