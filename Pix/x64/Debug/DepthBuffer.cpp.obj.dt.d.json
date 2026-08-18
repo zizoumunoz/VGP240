@@ -1,10 +1,10 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\depthbuffer.cpp",
+        "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\depthbuffer.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\depthbuffer.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\depthbuffer.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\memory",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime.h",

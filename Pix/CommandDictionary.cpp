@@ -19,6 +19,9 @@
 #include "CmdEnableDepth.h"
 #include "CmdCamera.h"
 
+// Light commands
+#include "CmdLights.h"
+
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -67,6 +70,9 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraNear>();
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
+
+	// Light commands
+	RegisterCommand<CmdSetLightAmbient>();
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()
