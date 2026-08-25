@@ -5,6 +5,10 @@ bool $viewport = true
 SetViewport(50, 50, 400, 400, $viewport)
 SetClipping(true)
 SetCullMode(none)
+<<<<<<< Updated upstream
+=======
+ShowViewport(true)
+>>>>>>> Stashed changes
 
 float $camX = 0
 float $camY = 0
@@ -16,6 +20,11 @@ float $camDirZ = 1
 
 float $rotY = 0 5 0 360
 
+<<<<<<< Updated upstream
+=======
+float $fov = 90 5 15 90
+
+>>>>>>> Stashed changes
 SetCameraPosition($camX, $camY, $camZ)
 SetCameraDirection($camDirX, $camDirY, $camDirZ)
 
@@ -42,8 +51,6 @@ Vertex(1, 1, 1, 1, 0, 1)
 Vertex(1, -1, -1, 1, 1, 0)
 Vertex(1, 1, 1, 1, 1, 0)
 Vertex(1, -1, 1, 1, 1, 0)
-
-EndDraw()
 
 
 

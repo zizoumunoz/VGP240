@@ -1,11 +1,19 @@
 {
     "Version": "1.2",
     "Data": {
+<<<<<<< Updated upstream
         "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\commanddictionary.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\commanddictionary.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\command.h",
+=======
+        "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\commanddictionary.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\commanddictionary.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\command.h",
+>>>>>>> Stashed changes
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\string",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime.h",
@@ -97,9 +105,15 @@
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\ctype.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vector",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\__msvc_bit_utils.hpp",
+<<<<<<< Updated upstream
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\texteditor.h",
             "c:\\users\\zmuno\\documents\\vgp240\\x\\external\\imgui\\inc\\imgui.h",
             "c:\\users\\zmuno\\documents\\vgp240\\x\\external\\imgui\\inc\\imconfig.h",
+=======
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\texteditor.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\external\\imgui\\inc\\imgui.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\external\\imgui\\inc\\imconfig.h",
+>>>>>>> Stashed changes
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\stdarg.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\assert.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\array",
@@ -147,6 +161,7 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\list",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\xbit_ops.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\unordered_map",
+<<<<<<< Updated upstream
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmddrawpixel.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdsetresolution.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdvarfloat.h",
@@ -165,6 +180,29 @@
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdcamera.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdlights.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdmaterial.h"
+=======
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmddrawpixel.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetresolution.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdvarfloat.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetcolor.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdbegindraw.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdenddraw.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdvertex.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetfillmode.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetviewport.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetclipping.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdmatrixstack.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetcullmode.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdvarbool.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdvarint.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdenabledepth.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdcamera.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdmaterial.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\materialmanager.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xcolors.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xmath.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h"
+>>>>>>> Stashed changes
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

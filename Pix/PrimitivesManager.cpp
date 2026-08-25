@@ -42,8 +42,12 @@ namespace
 		{
 			return faceNormal.z > 0.0f;
 		}
+<<<<<<< Updated upstream
 		else
 		{
+=======
+		else {
+>>>>>>> Stashed changes
 			return faceNormal.z < 0.0f;
 		}
 	}
@@ -51,7 +55,8 @@ namespace
 
 
 PrimitivesManager::PrimitivesManager()
-{}
+{
+}
 
 PrimitivesManager* PrimitivesManager::Get()
 {
@@ -148,15 +153,15 @@ void PrimitivesManager::EndDraw()
 				{
 					continue;
 				}
+				for (size_t t = 0; t < triangle.size(); t++)
+				{
+					// if already in NDC space, transform again just with the remaining matrices (matScreen)
+					triangle[t].m_pos = MathHelper::TransformCoord(triangle[t].m_pos, matScreen);
+					// after converting to screen space, make sure x and y are whole numbers
+					MathHelper::FlattenVectorScreenCoord(triangle[t].m_pos);
+				}
 			}
 			// transformation pipeline (matFinal, transforms from 
-			for (size_t t = 0; t < triangle.size(); t++)
-			{
-				// if already in NDC space, transform again just with the remaining matrices (matScreen)
-				triangle[t].m_pos = MathHelper::TransformCoord(triangle[t].m_pos, matScreen);
-				// after converting to screen space, make sure x and y are whole numbers
-				MathHelper::FlattenVectorScreenCoord(triangle[t].m_pos);
-			}
 
 			// screen space
 			if (!Clipper::Get()->ClipTriangle(triangle))

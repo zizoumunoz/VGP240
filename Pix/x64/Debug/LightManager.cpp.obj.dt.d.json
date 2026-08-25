@@ -1,6 +1,7 @@
 {
     "Version": "1.2",
     "Data": {
+<<<<<<< Updated upstream
         "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\lightmanager.cpp",
         "ProvidedModule": "",
         "Includes": [
@@ -272,6 +273,11 @@
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\materialmanager.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\lighttypes.h"
         ],
+=======
+        "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\lightmanager.cpp",
+        "ProvidedModule": "",
+        "Includes": [],
+>>>>>>> Stashed changes
         "ImportedModules": [],
         "ImportedHeaderUnits": []
     }

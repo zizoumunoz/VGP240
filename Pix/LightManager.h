@@ -14,6 +14,7 @@ public:
 	void SetLightDiffuse(const X::Color& color);
 	void SetLightSpecular(const X::Color& color);
 
+<<<<<<< Updated upstream
 	// directional light
 	void AddDirectionalLight(const Vector3& direction);
 	// point light
@@ -21,6 +22,8 @@ public:
 
 	// spot light
 
+=======
+>>>>>>> Stashed changes
 	X::Color ComputeLightColor(const Vector3& position, const Vector3& normal);
 
 private:

@@ -1,12 +1,21 @@
 {
     "Version": "1.2",
     "Data": {
+<<<<<<< Updated upstream
         "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\rasterizer.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\rasterizer.h",
             "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xengine.h",
             "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xcore.h",
+=======
+        "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\rasterizer.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\rasterizer.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xengine.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xcore.h",
+>>>>>>> Stashed changes
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\um\\windows.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\shared\\winapifamily.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\shared\\winpackagefamily.h",
@@ -259,6 +268,7 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\string",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\variant",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\xsmf_control.h",
+<<<<<<< Updated upstream
             "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xcolors.h",
             "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xmath.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
@@ -270,6 +280,19 @@
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\matrix4.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\depthbuffer.h"
+=======
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xcolors.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xmath.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xtypes.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vertex.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\mathhelper.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector2.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector3.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\matrix4.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\depthbuffer.h"
+>>>>>>> Stashed changes
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

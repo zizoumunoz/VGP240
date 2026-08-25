@@ -18,6 +18,8 @@
 #include "CmdVarInt.h"
 #include "CmdEnableDepth.h"
 #include "CmdCamera.h"
+#include "CmdMaterial.h"
+#include "MaterialManager.h"
 
 // Light commands
 #include "CmdLights.h"
@@ -40,17 +42,20 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetResolution>();
 	RegisterCommand<CmdSetViewport>();
 	RegisterCommand<CmdSetClipping>();
+	RegisterCommand<CmdEnableDepth>();
 
 	// Variable commands
 	RegisterCommand<CmdVarFloat>();
 	RegisterCommand<CmdVarInt>();
 	RegisterCommand<CmdVarBool>();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 	// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();
 	RegisterCommand<CmdSetColor>();
-	RegisterCommand<CmdEnableDepth>();
 
 	// Primitives commands
 	RegisterCommand<CmdSetFillMode>();
@@ -74,6 +79,7 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
 
+<<<<<<< Updated upstream
 	// Light commands
 	RegisterCommand<CmdSetLightAmbient>();
 	RegisterCommand<CmdSetLightDiffuse>();
@@ -87,6 +93,15 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetMaterialEmissive>();
 	RegisterCommand<CmdSetMaterialShininess>();
 	RegisterCommand<CmdSetMaterialSpecular>();
+=======
+	// Material commands
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand < CmdSetMaterialAmbient>();
+	RegisterCommand <CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialShininess>();
+
+>>>>>>> Stashed changes
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

@@ -1,10 +1,17 @@
 {
     "Version": "1.2",
     "Data": {
+<<<<<<< Updated upstream
         "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdmaterial.h",
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\command.h",
+=======
+        "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdmaterial.h",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\command.h",
+>>>>>>> Stashed changes
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\string",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime.h",
