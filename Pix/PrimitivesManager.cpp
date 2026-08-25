@@ -3,6 +3,7 @@
 #include "Clipper.h"
 #include "MatrixStack.h"
 #include "Camera.h"
+#include "LightManager.h"
 
 extern float gResolutionX;
 extern float gResolutionY;
@@ -47,7 +48,6 @@ namespace
 		}
 	}
 }
-
 
 PrimitivesManager::PrimitivesManager()
 {

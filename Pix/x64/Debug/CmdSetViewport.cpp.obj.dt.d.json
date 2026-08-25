@@ -1,19 +1,11 @@
 {
     "Version": "1.2",
     "Data": {
-<<<<<<< Updated upstream
         "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdsetviewport.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\cmdsetviewport.h",
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\command.h",
-=======
-        "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetviewport.cpp",
-        "ProvidedModule": "",
-        "Includes": [
-            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\cmdsetviewport.h",
-            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\command.h",
->>>>>>> Stashed changes
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\string",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\yvals_core.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vcruntime.h",
@@ -105,11 +97,7 @@
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\ctype.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vector",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\__msvc_bit_utils.hpp",
-<<<<<<< Updated upstream
             "c:\\users\\zmuno\\documents\\vgp240\\pix\\viewport.h"
-=======
-            "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\viewport.h"
->>>>>>> Stashed changes
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -5,6 +5,8 @@
 #include "CmdVarFloat.h"
 
 // Added commands
+#include "CmdVarBool.h"
+#include "CmdVarInt.h"
 #include "CmdSetColor.h"
 #include "CmdBeginDraw.h"
 #include "CmdEndDraw.h"
@@ -13,19 +15,11 @@
 #include "CmdSetViewport.h"
 #include "CmdSetClipping.h"
 #include "CmdMatrixStack.h"
-#include "CmdSetCullMode.h"
-#include "CmdVarBool.h"
-#include "CmdVarInt.h"
-#include "CmdEnableDepth.h"
 #include "CmdCamera.h"
+#include "CmdSetCullMode.h"
+#include "CmdEnableDepth.h"
 #include "CmdMaterial.h"
-#include "MaterialManager.h"
-
-// Light commands
 #include "CmdLights.h"
-
-// Material commands
-
 
 CommandDictionary* CommandDictionary::Get()
 {

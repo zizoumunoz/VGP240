@@ -61,9 +61,11 @@ bool CmdSetMaterialSpecular::Execute(const std::vector<std::string>& params)
 bool CmdSetMaterialShininess::Execute(const std::vector<std::string>& params)
 {
 	if (params.size() < 1)
-		float r = vc->GetFloat(params[0]);
-	float g = vc->GetFloat(params[1]);
-	float b = vc->GetFloat(params[2]);
-	MaterialManager::Get()->SetMaterialSpecular({ r, g, b, 1.0f });
+	{
+		return false;
+	}
+	VariableCache* vc = VariableCache::Get();
+	const float v = vc->GetFloat(params[0]);
+	MaterialManager::Get()->SetMaterialShininess(v);
 	return true;
 }
