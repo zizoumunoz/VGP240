@@ -1,4 +1,4 @@
-	#include "PrimitivesManager.h"
+#include "PrimitivesManager.h"
 #include "Rasterizer.h"
 #include "Clipper.h"
 #include "MatrixStack.h"
@@ -42,12 +42,7 @@ namespace
 		{
 			return faceNormal.z > 0.0f;
 		}
-<<<<<<< Updated upstream
-		else
-		{
-=======
 		else {
->>>>>>> Stashed changes
 			return faceNormal.z < 0.0f;
 		}
 	}
@@ -102,6 +97,8 @@ void PrimitivesManager::EndDraw()
 	// transformation pipeline only to NDC space
 	Matrix4 matNDCSpace = matWorld * matView * matProj;
 
+	ShadeMode shadeMode = Rasterizer::Get()->GetShadeMode();
+
 
 
 	switch (m_topology)
@@ -139,6 +136,40 @@ void PrimitivesManager::EndDraw()
 			};
 			if (m_applyTransform)
 			{
+				// add normals to the vertcies (reminder at this point we are in local space)
+				Vector3 faceNorm = CreateFaceNormal(triangle);
+				for (size_t t = 0; t < triangle.size(); ++t)
+				{
+					triangle[t].norm = faceNorm;
+				}
+
+				// mat world to transform into world space
+				// lighting is done in world space
+				// WORLD SPACE ======
+				for (size_t t = 0; t < triangle.size(); ++t)
+				{
+					// tranasforming all positions to world space
+					triangle[t].m_pos = MathHelper::TransformCoord(triangle[t].m_pos, matWorld);
+					triangle[t].worldPos = triangle[t].m_pos;
+					triangle[t].norm = MathHelper::TransformNormal(triangle[t].norm, matWorld);
+				}
+
+				if (shadeMode == ShadeMode::Flat)
+				{
+					triangle[0].m_color *= LightManager::Get()->ComputeLightColor(triangle[0].m_pos, triangle[0].norm);
+					triangle[1].m_color = triangle[0].m_color;
+					triangle[2].m_color = triangle[0].m_color;
+				}
+				else if (shadeMode == ShadeMode::Gouraud)
+				{
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						// apply light color to the vertices
+						triangle[t].m_color *= LightManager::Get()->ComputeLightColor(triangle[t].m_pos, triangle[t].norm);
+					}
+				}
+
+
 				// transform to NDC space, then check facing to see if you can draw, then draw
 				// use 3 points of triangle to make normal direction
 				// check the normal if it should be culled, proceed or cancel

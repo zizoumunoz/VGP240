@@ -83,7 +83,7 @@ X::Color SpotLight::ComputeLightColor(const Vector3& position, const Vector3& no
 	float attenuation = spot / (m_kConstant + (m_kLinear * distance) + (m_kQuadratic * distance * distance));
 	float iL = X::Math::Clamp(attenuation, 0.0f, 1.0f);
 
-	m_ambient * mm->GetMaterialAmbient();
+	X::Color ambient = m_ambient * mm->GetMaterialAmbient();
 
 	float dot = X::Math::Max(MathHelper::Dot(L, normal), 0.0f);
 	X::Color diffuse = m_diffuse * mm->GetMaterialDiffuse() * dot * iL;

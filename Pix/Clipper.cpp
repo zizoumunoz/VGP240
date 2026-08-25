@@ -1,11 +1,11 @@
 #include "Clipper.h"
 #include "Viewport.h"	// we need something to clip against
 
-const short BIT_INSIDE = 0;		// 0000
-const short BIT_LEFT = 1 << 0;	// 0001
-const short BIT_RIGHT = 1 << 1;	// 0010
-const short BIT_BOTTOM = 1 << 2;	// 0100
-const short BIT_TOP = 1 << 3;	// 1000
+const short BIT_INSIDE	= 0;		// 0000
+const short BIT_LEFT	= 1 << 0;	// 0001
+const short BIT_RIGHT	= 1 << 1;	// 0010
+const short BIT_BOTTOM	= 1 << 2;	// 0100
+const short BIT_TOP		= 1 << 3;	// 1000
 
 // generate a bit code that signifies where the point is
 // If code is not 0, it is outside of the screen in one of the 8 regions
@@ -66,6 +66,7 @@ bool IsInFront(ClipEdge edge, const Vector3& pos)
 	default:
 		break;
 	}
+	return false;
 }
 
 Vertex ComputeIntersection(ClipEdge edge, const Vertex& a, const Vertex& b)
@@ -178,7 +179,7 @@ bool Clipper::ClipLine(Vertex& a, Vertex& b)
 			a = LerpVertex(a, b, t);
 			codeA = GetOutputCode(a.m_pos.x, a.m_pos.y);
 		}
-		else
+		else if(outCode == codeB)
 		{
 			b = LerpVertex(a, b, t);
 			codeB = GetOutputCode(b.m_pos.x, b.m_pos.y);

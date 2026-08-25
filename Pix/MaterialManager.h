@@ -12,13 +12,8 @@ public:
 	void SetMaterialEmissive(const X::Color& color);
 	void SetMaterialAmbient(const X::Color& color);
 	void SetMaterialDiffuse(const X::Color& color);
-<<<<<<< Updated upstream
-	void SetMaterialShininess(const float color);
 	void SetMaterialSpecular(const X::Color& color);
-=======
-	void SetMaterialShininess(const X::Color& color);
-	void SetMaterialSpecular(const float color);
->>>>>>> Stashed changes
+	void SetMaterialShininess(float color);
 
 	const X::Color& GetMaterialEmissive() const;
 	const X::Color& GetMaterialAmbient() const;

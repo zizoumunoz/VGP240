@@ -1,16 +1,6 @@
 {
     "Version": "1.2",
     "Data": {
-<<<<<<< Updated upstream
-        "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\camera.cpp",
-        "ProvidedModule": "",
-        "Includes": [
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\camera.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\mathhelper.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\vector2.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\vector3.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\matrix4.h",
-=======
         "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\camera.cpp",
         "ProvidedModule": "",
         "Includes": [
@@ -19,7 +9,6 @@
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector2.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector3.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\matrix4.h",
->>>>>>> Stashed changes
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_math.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h",

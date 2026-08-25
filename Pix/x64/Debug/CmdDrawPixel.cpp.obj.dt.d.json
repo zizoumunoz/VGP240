@@ -270,12 +270,8 @@
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector2.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector3.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\matrix4.h",
-<<<<<<< Updated upstream
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\variablecache.h"
-=======
-            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h"
->>>>>>> Stashed changes
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

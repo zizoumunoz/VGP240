@@ -25,7 +25,6 @@
 #include "CmdLights.h"
 
 // Material commands
-#include "CmdMaterial.h"
 
 
 CommandDictionary* CommandDictionary::Get()
@@ -41,28 +40,24 @@ CommandDictionary::CommandDictionary()
 	// Setting commands
 	RegisterCommand<CmdSetResolution>();
 	RegisterCommand<CmdSetViewport>();
-	RegisterCommand<CmdSetClipping>();
-	RegisterCommand<CmdEnableDepth>();
-
+		
 	// Variable commands
 	RegisterCommand<CmdVarFloat>();
 	RegisterCommand<CmdVarInt>();
 	RegisterCommand<CmdVarBool>();
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
-
-	// Rasterization commands
+		// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();
 	RegisterCommand<CmdSetColor>();
+	RegisterCommand<CmdSetFillMode>();
+	RegisterCommand<CmdSetClipping>();
 
 	// Primitives commands
-	RegisterCommand<CmdSetFillMode>();
 	RegisterCommand<CmdBeginDraw>();
 	RegisterCommand<CmdEndDraw>();
 	RegisterCommand<CmdVertex>();
 	RegisterCommand<CmdSetCullMode>();
+	RegisterCommand<CmdEnableDepth>();
 
 	// Matrix stack commands
 	RegisterCommand<CmdPushTranslation>();
@@ -79,7 +74,6 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
 
-<<<<<<< Updated upstream
 	// Light commands
 	RegisterCommand<CmdSetLightAmbient>();
 	RegisterCommand<CmdSetLightDiffuse>();
@@ -87,13 +81,6 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdAddDirectionalLight>();
 	RegisterCommand<CmdAddPointLight>();
 
-	// Material Commands
-	RegisterCommand<CmdSetMaterialAmbient>();
-	RegisterCommand<CmdSetMaterialDiffuse>();
-	RegisterCommand<CmdSetMaterialEmissive>();
-	RegisterCommand<CmdSetMaterialShininess>();
-	RegisterCommand<CmdSetMaterialSpecular>();
-=======
 	// Material commands
 	RegisterCommand<CmdSetMaterialEmissive>();
 	RegisterCommand < CmdSetMaterialAmbient>();
@@ -101,7 +88,6 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetMaterialSpecular>();
 	RegisterCommand<CmdSetMaterialShininess>();
 
->>>>>>> Stashed changes
 }
 
 TextEditor::LanguageDefinition CommandDictionary::GenerateLanguageDefinition()

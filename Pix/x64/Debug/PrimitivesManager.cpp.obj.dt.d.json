@@ -1,17 +1,6 @@
 {
     "Version": "1.2",
     "Data": {
-<<<<<<< Updated upstream
-        "Source": "c:\\users\\zmuno\\documents\\vgp240\\pix\\primitivesmanager.cpp",
-        "ProvidedModule": "",
-        "Includes": [
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\primitivesmanager.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\vertex.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\mathhelper.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\vector2.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\vector3.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\matrix4.h",
-=======
         "Source": "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\primitivesmanager.cpp",
         "ProvidedModule": "",
         "Includes": [
@@ -21,7 +10,6 @@
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector2.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\vector3.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\matrix4.h",
->>>>>>> Stashed changes
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt_math.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\corecrt.h",
@@ -29,13 +17,8 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\sal.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\concurrencysal.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vadefs.h",
-<<<<<<< Updated upstream
-            "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xcolors.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xmath.h",
-=======
             "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xcolors.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xmath.h",
->>>>>>> Stashed changes
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\vector",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\yvals_core.h",
@@ -116,15 +99,9 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\initializer_list",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\xpolymorphic_allocator.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\tuple",
-<<<<<<< Updated upstream
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\rasterizer.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xengine.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xcore.h",
-=======
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\rasterizer.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xengine.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xcore.h",
->>>>>>> Stashed changes
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\um\\windows.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\shared\\winapifamily.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\shared\\winpackagefamily.h",
@@ -292,17 +269,10 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\string",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\variant",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.44.35207\\include\\xsmf_control.h",
-<<<<<<< Updated upstream
-            "c:\\users\\zmuno\\documents\\vgp240\\x\\inc\\xtypes.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\clipper.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\matrixstack.h",
-            "c:\\users\\zmuno\\documents\\vgp240\\pix\\camera.h"
-=======
             "c:\\users\\zmuno\\documents\\local\\vgp240\\x\\inc\\xtypes.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\clipper.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\matrixstack.h",
             "c:\\users\\zmuno\\documents\\local\\vgp240\\pix\\camera.h"
->>>>>>> Stashed changes
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

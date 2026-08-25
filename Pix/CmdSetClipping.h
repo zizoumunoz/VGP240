@@ -5,10 +5,16 @@ class CmdSetClipping :
 {
 public:
 	// Inherited via Command
-	const char* GetName() override;
-
-	const char* GetDescription() override;
-
+	const char* GetName()
+	{
+		return "SetClipping";
+	}
+	const char* GetDescription()
+	{
+		return
+			"SetClipping(enable)\n"
+			"\n"
+			"- enables/disables clipping outside of viewport";
+	}
 	bool Execute(const std::vector<std::string>& params) override;
-
 };
