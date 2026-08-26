@@ -15,10 +15,10 @@ namespace
 		const float hw = gResolutionX * 0.5f;
 		const float hh = gResolutionY * 0.5f;
 		return {
-			hw, 0.0f, 0.0f, 0.0f,
-			0.0f, -hh, 0.0f, 0.0,
-			0.0f, 0.0f, 1.0f, 0.0f,
-			hw, hh, 0.0f, 1.0f
+			hw,		0.0f, 0.0f, 0.0f,
+			0.0f,	 -hh, 0.0f,  0.0,
+			0.0f,   0.0f, 1.0f, 0.0f,
+			  hw,     hh, 0.0f, 1.0f
 		};
 	}
 
@@ -43,7 +43,8 @@ namespace
 		{
 			return faceNormal.z > 0.0f;
 		}
-		else {
+		else
+		{
 			return faceNormal.z < 0.0f;
 		}
 	}
@@ -95,11 +96,9 @@ void PrimitivesManager::EndDraw()
 	// full transformation pipeline (commented out for notes)
 	// Matrix4 matFinal = matWorld * matView * matProj * matScreen;
 	// transformation pipeline only to NDC space
-	Matrix4 matNDCSpace = matWorld * matView * matProj;
+	Matrix4 matNDCSpace = matView * matProj;
 
 	ShadeMode shadeMode = Rasterizer::Get()->GetShadeMode();
-
-
 
 	switch (m_topology)
 	{
@@ -136,11 +135,15 @@ void PrimitivesManager::EndDraw()
 			};
 			if (m_applyTransform)
 			{
-				// add normals to the vertcies (reminder at this point we are in local space)
-				Vector3 faceNorm = CreateFaceNormal(triangle);
-				for (size_t t = 0; t < triangle.size(); ++t)
+
+				if (MathHelper::CheckEqual(MathHelper::MagnitudeSquared(triangle[0].norm), 0))
 				{
-					triangle[t].norm = faceNorm;
+					// add normals to the vertcies (reminder at this point we are in local space)
+					Vector3 faceNorm = CreateFaceNormal(triangle);
+					for (size_t t = 0; t < triangle.size(); ++t)
+					{
+						triangle[t].norm = faceNorm;
+					}
 				}
 
 				// mat world to transform into world space
@@ -156,9 +159,10 @@ void PrimitivesManager::EndDraw()
 
 				if (shadeMode == ShadeMode::Flat)
 				{
-					triangle[0].m_color *= LightManager::Get()->ComputeLightColor(triangle[0].m_pos, triangle[0].norm);
-					triangle[1].m_color = triangle[0].m_color;
-					triangle[2].m_color = triangle[0].m_color;
+					X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].m_pos, triangle[0].norm);
+					triangle[0].m_color *= lightColor;
+					triangle[1].m_color *= lightColor;
+					triangle[2].m_color *= lightColor;
 				}
 				else if (shadeMode == ShadeMode::Gouraud)
 				{

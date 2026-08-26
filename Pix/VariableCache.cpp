@@ -130,7 +130,7 @@ int VariableCache::GetInt(const std::string& param)
 		}
 	}
 
-	return stof(param);
+	return stoi(param);
 }
 
 void VariableCache::AddBool(const std::string& name, bool value)

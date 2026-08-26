@@ -2,7 +2,6 @@ SetResolution(50, 50, 10)
 
 SetViewport(10, 10, 30, 30, false)
 SetClipping(true)
-ShowViewport(false)
 
 BeginDraw(point)
 Vertex(10, 10, 1, 0, 0)
@@ -40,5 +39,3 @@ Vertex(30, 20, 1, 0, 0)
 Vertex(48, 25, 0, 1, 0)
 Vertex(35, 33, 0, 0, 1)
 EndDraw()
-
-

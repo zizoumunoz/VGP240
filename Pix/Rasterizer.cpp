@@ -59,8 +59,6 @@ ShadeMode Rasterizer::GetShadeMode() const
 	return m_shadeMode;
 }
 
-
-
 void Rasterizer::DrawPoint(int x, int y)
 {
 	X::DrawPixel(x, y, m_Color);
@@ -76,7 +74,7 @@ void Rasterizer::DrawPoint(const Vertex& v)
 		{
 			pixelColor *= LightManager::Get()->ComputeLightColor(v.worldPos, v.norm);
 		}
-		X::DrawPixel(v.m_pos.x, v.m_pos.y, v.m_color);
+		X::DrawPixel(v.m_pos.x, v.m_pos.y, pixelColor);
 	}
 }
 
@@ -126,10 +124,7 @@ void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 	{
 		std::vector<Vertex> sortedVertices = { a, b, c };
 		std::sort(sortedVertices.begin(), sortedVertices.end(),
-			[](const Vertex& lhs, const Vertex& rhs)
-			{
-				return lhs.m_pos.y < rhs.m_pos.y;
-			});
+			[](const Vertex& lhs, const Vertex& rhs) {return lhs.m_pos.y < rhs.m_pos.y; });
 		DrawFilledTriangle(sortedVertices[0], sortedVertices[1], sortedVertices[2]);
 	}
 	break;

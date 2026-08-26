@@ -10,36 +10,15 @@ struct Vector2
 	Vector2(const Vector2& v) : x(v.x), y(v.y) {}
 
 	// common operators
-	Vector2 operator-() const
-	{
-		return { -x, -y };
-	}
-
-	Vector2 operator+(const Vector2& rhs) const
-	{
-		return { x + rhs.x, y * rhs.y };
-	}
-	Vector2 operator-(const Vector2& rhs) const
-	{
-		return { x - rhs.x, y - rhs.y };
-	}
-	Vector2 operator*(const Vector2& rhs) const
-	{
-		return { x * rhs.x, y * rhs.y };
-	}
-	Vector2 operator/(const Vector2& rhs) const
-	{
-		return { x / rhs.x, y / rhs.y };
-	}
-
-
+	Vector2 operator-() const { return { -x, -y }; }
+	Vector2 operator+(const Vector2& rhs) const { return { x + rhs.x, y + rhs.y }; }
+	Vector2 operator-(const Vector2& rhs) const { return { x - rhs.x, y - rhs.y }; }
+	Vector2 operator*(const float rhs) const { return { x * rhs, y * rhs }; }
+	Vector2 operator/(const float rhs) const { return { x / rhs, y / rhs }; }
 
 	// common inline operators
 	Vector2& operator+=(const Vector2& rhs) { x += rhs.x; y += rhs.y; return *this; }
 	Vector2& operator-=(const Vector2& rhs) { x -= rhs.x; y -= rhs.y; return *this; }
-	Vector2& operator*=(float s) { x *= s; y *= s; return *this; }
-	Vector2& operator/=(float s) { x /= s; y /= s; return *this; }
-
-
-
+	Vector2& operator*=(float rhs) { x *= rhs; y *= rhs; return *this; }
+	Vector2& operator/=(float rhs) { x /= rhs; y /= rhs; return *this; }
 };
