@@ -42,7 +42,7 @@ public:
 
 private:
 	rapidjson::Document mDocument;
-	std::string m_fileName;
+	std::string mFileName;
 };
 
 //----------------------------------------------------------------------------------------------------
@@ -69,14 +69,14 @@ void Config::Impl::Load(const char* fileName)
 
 	fclose(file);
 
-	m_fileName = fileName;
+	mFileName = fileName;
 }
 
 //----------------------------------------------------------------------------------------------------
 
 void Config::Impl::Save()
 {
-	SaveAs(m_fileName.c_str());
+	SaveAs(mFileName.c_str());
 }
 
 //----------------------------------------------------------------------------------------------------
