@@ -56,6 +56,17 @@ void LightManager::AddPointLight(const Vector3& position, float kConstant, float
 }
 
 // spot light
+void LightManager::AddSpotLight(const Vector3& position, const Vector3& direction, float kConstant, float kLinear, float kQuadratic, float kAngle, float kDecay)
+{
+	auto light = std::make_unique<SpotLight>();
+	light->SetAmbient(m_ambient);
+	light->SetDiffuse(m_diffuse);
+	light->SetSpecular(m_specular);
+	light->SetAttenuation(kConstant, kLinear, kQuadratic);
+	light->SetPosition(position);
+	light->SetDirection(direction);
+	m_lights.push_back(std::move(light));
+}
 
 X::Color LightManager::ComputeLightColor(const Vector3& position, const Vector3& normal)
 {

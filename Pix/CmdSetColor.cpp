@@ -1,19 +1,7 @@
 #include "CmdSetColor.h"
 #include "Rasterizer.h"
+#include "VariableCache.h"
 
-const char* CmdSetColor::GetName()
-{
-	return "SetColor";
-}
-
-const char* CmdSetColor::GetDescription()
-{
-	return
-		"SetColor(r, g, b)\n"
-		"\n"
-		"- Sets the color of the next pixel using red, green, and blue\n"
-		"- Values are from 0.0 to 1.0";
-}
 
 bool CmdSetColor::Execute(const std::vector<std::string>& params)
 {
@@ -22,9 +10,9 @@ bool CmdSetColor::Execute(const std::vector<std::string>& params)
 	{
 		return false; 
 	}
-	float r = std::stof(params[0]);
-	float g = std::stof(params[1]);
-	float b = std::stof(params[2]);
+	float r = VariableCache::Get()->GetFloat(params[0]);
+	float g = VariableCache::Get()->GetFloat(params[1]);
+	float b = VariableCache::Get()->GetFloat(params[2]);
 
 	Rasterizer::Get()->SetColor({ r, g, b, 1.0f });
 	return true;

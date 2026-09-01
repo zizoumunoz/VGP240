@@ -90,3 +90,20 @@ public:
 
 	bool Execute(const std::vector<std::string>& params) override;
 };
+
+class CmdAddSpotLight : public Command
+{
+public:
+	const char* GetName()
+	{
+		return "AddSpotLight";
+	}
+	const char* GetDescription()
+	{
+		return
+			"AddSpotLight(px, py, pz, dx, dy, dz, <constant>, <linear>, <quadratic>, <angle>, <decay>)\n"
+			"- add a spot light to the scene at a specific position\n"
+			"- can modify the attenuation constants";
+	}
+	bool Execute(const std::vector<std::string>& params) override;
+};

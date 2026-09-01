@@ -3,11 +3,13 @@ C:\Users\zmuno\Documents\Local\VGP240\Pix\Clipper.cpp;C:\Users\zmuno\Documents\L
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdBeginDraw.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdBeginDraw.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdCamera.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdCamera.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdDrawPixel.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdDrawPixel.obj
+C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdDrawSquare.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdDrawSquare.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdEnableDepth.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdEnableDepth.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdEndDraw.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdEndDraw.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdLights.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdLights.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdMaterial.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdMaterial.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdMatrixStack.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdMatrixStack.obj
+C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdModel.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdModel.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetClipping.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetColor.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\CmdSetCullMode.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\CmdSetCullMode.obj
@@ -27,6 +29,8 @@ C:\Users\zmuno\Documents\Local\VGP240\Pix\LightTypes.cpp;C:\Users\zmuno\Document
 C:\Users\zmuno\Documents\Local\VGP240\Pix\MaterialManager.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\MaterialManager.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\MathHelper.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\MathHelper.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\MatrixStack.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\MatrixStack.obj
+C:\Users\zmuno\Documents\Local\VGP240\Pix\Model.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\Model.obj
+C:\Users\zmuno\Documents\Local\VGP240\Pix\ModelManager.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\ModelManager.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\PixEditor.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\PixEditor.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\PrimitivesManager.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\PrimitivesManager.obj
 C:\Users\zmuno\Documents\Local\VGP240\Pix\Rasterizer.cpp;C:\Users\zmuno\Documents\Local\VGP240\Pix\x64\Debug\Rasterizer.obj

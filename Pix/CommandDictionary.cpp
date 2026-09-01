@@ -3,8 +3,6 @@
 #include "CmdDrawPixel.h"
 #include "CmdSetResolution.h"
 #include "CmdVarFloat.h"
-
-// Added commands
 #include "CmdVarBool.h"
 #include "CmdVarInt.h"
 #include "CmdSetColor.h"
@@ -20,6 +18,9 @@
 #include "CmdEnableDepth.h"
 #include "CmdMaterial.h"
 #include "CmdLights.h"
+#include "CmdSetShadeMode.h"
+#include "CmdDrawSquare.h"
+#include "CmdModel.h"
 
 CommandDictionary* CommandDictionary::Get()
 {
@@ -34,17 +35,20 @@ CommandDictionary::CommandDictionary()
 	// Setting commands
 	RegisterCommand<CmdSetResolution>();
 	RegisterCommand<CmdSetViewport>();
+	RegisterCommand<CmdDrawSquare>();
 		
 	// Variable commands
 	RegisterCommand<CmdVarFloat>();
-	RegisterCommand<CmdVarInt>();
 	RegisterCommand<CmdVarBool>();
+	RegisterCommand<CmdVarInt>();
+	RegisterCommand<CmdModel>();
 
 		// Rasterization commands
 	RegisterCommand<CmdDrawPixel>();
 	RegisterCommand<CmdSetColor>();
 	RegisterCommand<CmdSetFillMode>();
 	RegisterCommand<CmdSetClipping>();
+	RegisterCommand<CmdSetShadeMode>();
 
 	// Primitives commands
 	RegisterCommand<CmdBeginDraw>();
@@ -68,19 +72,21 @@ CommandDictionary::CommandDictionary()
 	RegisterCommand<CmdSetCameraFar>();
 	RegisterCommand<CmdSetCameraFov>();
 
+	// Material commands
+	RegisterCommand<CmdSetMaterialEmissive>();
+	RegisterCommand<CmdSetMaterialAmbient>();
+	RegisterCommand<CmdSetMaterialDiffuse>();
+	RegisterCommand<CmdSetMaterialSpecular>();
+	RegisterCommand<CmdSetMaterialShininess>();
+
 	// Light commands
 	RegisterCommand<CmdSetLightAmbient>();
 	RegisterCommand<CmdSetLightDiffuse>();
 	RegisterCommand<CmdSetLightSpecular>();
 	RegisterCommand<CmdAddDirectionalLight>();
 	RegisterCommand<CmdAddPointLight>();
+	RegisterCommand<CmdAddSpotLight>();
 
-	// Material commands
-	RegisterCommand<CmdSetMaterialEmissive>();
-	RegisterCommand < CmdSetMaterialAmbient>();
-	RegisterCommand <CmdSetMaterialDiffuse>();
-	RegisterCommand<CmdSetMaterialSpecular>();
-	RegisterCommand<CmdSetMaterialShininess>();
 
 }
 

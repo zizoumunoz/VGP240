@@ -64,9 +64,6 @@ public:
 class CmdSetCameraFar : public Command
 {
 public:
-
-
-	// Inherited via Command
 	const char* GetName() override
 	{
 		return "SetCameraFar";

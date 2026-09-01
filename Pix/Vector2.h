@@ -16,7 +16,7 @@ struct Vector2
 	Vector2 operator*(const float rhs) const { return { x * rhs, y * rhs }; }
 	Vector2 operator/(const float rhs) const { return { x / rhs, y / rhs }; }
 
-	// common inline operators
+		// common inline operators
 	Vector2& operator+=(const Vector2& rhs) { x += rhs.x; y += rhs.y; return *this; }
 	Vector2& operator-=(const Vector2& rhs) { x -= rhs.x; y -= rhs.y; return *this; }
 	Vector2& operator*=(float rhs) { x *= rhs; y *= rhs; return *this; }

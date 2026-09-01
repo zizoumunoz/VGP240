@@ -10,7 +10,6 @@ void MatrixStack::OnNewFrame()
 {
     m_combinedTransform = Matrix4::Identity();
     m_matrices.clear();
-
 }
 
 void MatrixStack::PushTranslation(const Vector3& d)

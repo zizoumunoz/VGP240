@@ -15,7 +15,7 @@ bool CmdBeginDraw::Execute(const std::vector<std::string>& params)
 	else if (params[0] == "triangle") { topology = Topology::Triangle; }
 	else { return false; }
 
-	bool applyTransform = params.size() && params[0] == "true";
+	bool applyTransform = params.size() && params[1] == "true";
 	PrimitivesManager::Get()->BeginDraw(topology, applyTransform);
 	return true;
 }

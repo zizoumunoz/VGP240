@@ -25,7 +25,7 @@ bool CmdPushRotationX::Execute(const std::vector<std::string>& params)
 	}
 
 	VariableCache* vc = VariableCache::Get();
-	float degrees = vc->GetFloat(params[0]);
+	const float degrees = vc->GetFloat(params[0]);
 	MatrixStack::Get()->PushRotationX(degrees * MathHelper::DegToRad);
 	return true;
 }
@@ -37,7 +37,7 @@ bool CmdPushRotationY::Execute(const std::vector<std::string>& params)
 		return false;
 	}
 
-	float degrees = VariableCache::Get()->GetFloat(params[0]);
+	const float degrees = VariableCache::Get()->GetFloat(params[0]);
 	MatrixStack::Get()->PushRotationY(degrees * MathHelper::DegToRad);
 	return true;
 }
@@ -50,7 +50,7 @@ bool CmdPushRotationZ::Execute(const std::vector<std::string>& params)
 		return false;
 	}
 
-	float degrees = VariableCache::Get()->GetFloat(params[0]);
+	const float degrees = VariableCache::Get()->GetFloat(params[0]);
 	MatrixStack::Get()->PushRotationZ(degrees * MathHelper::DegToRad);
 	return true;
 }

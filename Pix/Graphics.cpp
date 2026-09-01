@@ -4,8 +4,8 @@
 #include "Clipper.h"
 #include "MatrixStack.h"
 #include "Camera.h"
-#include "DepthBuffer.h"
 #include "PrimitivesManager.h"
+#include "DepthBuffer.h"
 #include "MaterialManager.h"
 #include "LightManager.h"
 

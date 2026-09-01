@@ -7,7 +7,6 @@ struct Vertex
 {
 	Vector3 m_pos;		// position of the vertex
 	X::Color m_color;	// color of the vertex
-
 	// needed for lighting calculations
 	Vector3 norm;	// normal at the vertex
 	Vector3 worldPos; // position in the world, helps with lighting at the pixel

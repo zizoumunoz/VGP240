@@ -1,7 +1,6 @@
 #include "CmdSetShadeMode.h"
 #include "Rasterizer.h"
 
-
 bool CmdSetShadeMode::Execute(const std::vector<std::string>& params)
 {
 	if (params.size() < 1)

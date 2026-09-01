@@ -20,6 +20,7 @@ public:
 	void AddPointLight(const Vector3& position, float kConstant, float kLinear, float kQuadratic);
 
 	// spot light
+	void AddSpotLight(const Vector3& position, const Vector3& direction, float kConstant, float kLinear, float kQuadratic, float kAngle, float kDecay);
 
 	X::Color ComputeLightColor(const Vector3& position, const Vector3& normal);
 
